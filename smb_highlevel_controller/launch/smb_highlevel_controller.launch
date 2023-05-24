@@ -1,0 +1,14 @@
+<launch>
+	<node name= "smb_highlevel_controller" pkg="smb_highlevel_controller" type="smb_highlevel_controller" output="screen">
+		<rosparam command="load"
+			file="$(find smb_highlevel_controller)/config/my_params.yaml"/>
+	</node>
+
+
+  	<!-- Launching RViz 
+  	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find smb_highlevel_controller)/rviz/smb_highlevel_controller.rviz"/>  -->
+
+  	 <node name= "serial_node" pkg="rosserial_python" type="serial_node.py" output="screen"/> 
+
+
+</launch>
